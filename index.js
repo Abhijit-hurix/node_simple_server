@@ -2,9 +2,11 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const keys = require('./keys');
 require('./models/skillData');
 
-mongoose.connect('mongodb://localhost:27020/addSkill');
+/*mongoose.connect('mongodb://localhost:27020/addSkill');*/
+mongoose.connect(keys.mogoURI);
 
 const app = express();
 app.use(cors());
